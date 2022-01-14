@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "build": "npm run build-templates && npm run build-tailwind",
-    "build-templates": "swig render ./src/index.html > ./dist/index.html",
+    "build-templates": "nunjucks *.html -p ./src/templates -o ./dist/",
     "build-tailwind": "tailwindcss -i ./src/styles.css -o ./dist/styles.css",
     "serve": "browser-sync start --server dist/ --no-ui --no-notify",
     "watch": "chokidar \"./src/**/*.{css,html}\" -c \"npm run build\"",
@@ -23,8 +23,8 @@
   "homepage": "https://github.com/reimar/sudo-sudo.com#readme",
   "devDependencies": {
     "browser-sync": "^2.27.7",
-    "chokidar-cli": "^3.0.0",
-    "swig": "^1.4.2",
+    "chokidar-cli": "^1.2.2",
+    "nunjucks-cli": "^1.0.0",
     "tailwindcss": "^3.0.13"
   }
 }

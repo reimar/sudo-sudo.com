@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=1" />
-    <title>Sudo — Design Consulting</title>
-    <link href="styles.css" rel="stylesheet" />
-</head>
-<body style="padding: 0; margin: 0; background: #000;">
+{% extends 'layouts/main.html' %}
+{% block content %}
     <div style="display: flex; align-items: center; justify-content: center; width: 100vw; height: 100vh;">
         <svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g id="logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -16,5 +8,4 @@
             </g>
         </svg>
     </div>
-</body>
-</html>
+{% endblock %}

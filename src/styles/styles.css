@@ -5,16 +5,16 @@
 /* header */
 
 .header {
-  height: 40rem;
+  @apply md:h-1/2 h-screen;
   position: relative;
 }
 
 .header__image {
+  @apply md:h-full h-screen;
   background-image: url(reimar-portrait.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
   left: 0;
   top: 0;
   width: 100%;
@@ -23,42 +23,36 @@
 /* sticker */
 
 .sticker {
+  @apply top-8 left-8 w-40 h-40;
   align-items: center;
-  animation: scale 8s linear infinite;
   display: flex;
-  filter: drop-shadow(2px 2px 0 black);
-  height: 12rem;
+  filter: drop-shadow(4px 4px 0 black);
   justify-content: center;
-  left: 5rem;
   position: absolute;
-  top: 5rem;
-  transform-origin: center center;
-  width: 12rem;
 }
 
 .sticker__label {
+  animation: scale-and-rotate 8s linear infinite;
   font-size: 200%;
   font-weight: bold;
   line-height: 1;
   position: relative;
   text-align: center;
+  transform-origin: center center;
   transform: rotate(-12deg);
   z-index: 2;
 }
 
-.sticker__shape {
+.sticker__svg {
+  animation: scale-and-rotate 8s linear infinite;
   height: 100%;
   left: 0;
   position: absolute;
   top: 0;
+  transform-origin: center center;
+  transform: rotate(-12deg);
   width: 100%;
   z-index: 1;
-}
-
-.sticker svg {
-  position: relative;
-  height: 100%;
-  width: 100%;
   filter:
     drop-shadow(2px 0 0 black)
     drop-shadow(-2px 0 0 black)
@@ -66,25 +60,39 @@
     drop-shadow(0 2px 0 black);
 }
 
-#path-1 {
+#sticker-shape-1 {
   animation: spin-cw 8s linear infinite;
   transform-origin: center center;
 }
 
-#path-2 {
+#sticker-shape-2 {
   animation: spin-ccw 8s linear infinite;
   transform-origin: center center;
 }
 
-/* sticker animations */
+/* arrow */
 
-@keyframes scale {
+.arrow {
+  @apply md:-bottom-8 bottom-2 right-1/4 w-40 h-40;
+  animation: hover 4s ease-in-out infinite;
+  filter: drop-shadow(8px 8px 0 black);
+  position: absolute;
+}
+
+.arrow svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* animations */
+
+@keyframes scale-and-rotate {
   0% {
-    transform: scale(1);
+    transform: scale(1) rotate(-12deg);
   }
   50% {
-    transform: scale(1.2);
-  } 
+    transform: scale(1.2) rotate(-20deg);
+  }
 }
 
 @keyframes spin-cw { 
@@ -97,4 +105,13 @@
   100% { 
     transform: rotate(-360deg);
   } 
+}
+
+@keyframes hover {
+  0% {
+    transform: translate(0 0);
+  }
+  50% { 
+    transform: translate(0 16px);
+  }
 }

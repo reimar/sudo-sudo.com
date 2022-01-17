@@ -4,9 +4,9 @@
   "description": "Sudo Corporate Website",
   "main": "index.html",
   "scripts": {
-    "build": "npm run build-templates && npm run build-tailwind",
+    "build": "npm run build-templates && npm run build-tailwind && npm run copy-images",
     "build-templates": "nunjucks *.html -p ./src/templates -o ./dist/",
-    "build-tailwind": "tailwindcss -i ./src/styles/styles.css -o ./dist/styles.css",
+    "build-tailwind": "tailwindcss -i ./src/styles/styles.css -o ./dist/styles.css --minify",
     "copy-images": "cp ./src/images/* ./dist/",
     "serve": "browser-sync start --server dist/ --no-ui --no-notify",
     "watch": "chokidar \"./src/**/*.{css,html}\" -c \"npm run build\"",

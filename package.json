@@ -6,7 +6,8 @@
   "scripts": {
     "build": "npm run build-templates && npm run build-tailwind",
     "build-templates": "nunjucks *.html -p ./src/templates -o ./dist/",
-    "build-tailwind": "tailwindcss -i ./src/styles.css -o ./dist/styles.css",
+    "build-tailwind": "tailwindcss -i ./src/styles/styles.css -o ./dist/styles.css",
+    "copy-images": "cp ./src/images/* ./dist/",
     "serve": "browser-sync start --server dist/ --no-ui --no-notify",
     "watch": "chokidar \"./src/**/*.{css,html}\" -c \"npm run build\"",
     "dev": "npm run build && npm run watch & npm run serve"

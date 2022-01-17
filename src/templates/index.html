@@ -1,11 +1,7 @@
+{% import 'partials/logo.html' as logo %}
 {% extends 'layouts/main.html' %}
 {% block content %}
-    <div style="display: flex; align-items: center; justify-content: center; width: 100vw; height: 100vh;">
-        <svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <g id="logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <rect fill="#000000" x="0" y="0" width="256" height="256"></rect>
-                <polyline stroke="#00FF93" stroke-width="24" points="128 103.253043 128 48 48 128.000832 208 127.999168 128 208 128 152.750283"></polyline>
-            </g>
-        </svg>
+    <div class="flex items-center justify-center w-screen h-screen bg-black">
+        {{ logo.render() }}
     </div>
 {% endblock %}

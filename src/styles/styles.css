@@ -1,3 +1,100 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* header */
+
+.header {
+  height: 40rem;
+  position: relative;
+}
+
+.header__image {
+  background-image: url(reimar-portrait.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+/* sticker */
+
+.sticker {
+  align-items: center;
+  animation: scale 8s linear infinite;
+  display: flex;
+  filter: drop-shadow(2px 2px 0 black);
+  height: 12rem;
+  justify-content: center;
+  left: 5rem;
+  position: absolute;
+  top: 5rem;
+  transform-origin: center center;
+  width: 12rem;
+}
+
+.sticker__label {
+  font-size: 200%;
+  font-weight: bold;
+  line-height: 1;
+  position: relative;
+  text-align: center;
+  transform: rotate(-12deg);
+  z-index: 2;
+}
+
+.sticker__shape {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.sticker svg {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  filter:
+    drop-shadow(2px 0 0 black)
+    drop-shadow(-2px 0 0 black)
+    drop-shadow(0 -2px 0 black)
+    drop-shadow(0 2px 0 black);
+}
+
+#path-1 {
+  animation: spin-cw 8s linear infinite;
+  transform-origin: center center;
+}
+
+#path-2 {
+  animation: spin-ccw 8s linear infinite;
+  transform-origin: center center;
+}
+
+/* sticker animations */
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  } 
+}
+
+@keyframes spin-cw { 
+  100% { 
+    transform: rotate(360deg);
+  } 
+}
+
+@keyframes spin-ccw { 
+  100% { 
+    transform: rotate(-360deg);
+  } 
+}

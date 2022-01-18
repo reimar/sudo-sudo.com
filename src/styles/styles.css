@@ -139,6 +139,21 @@
   top: 0;
 }
 
+/* price tag */
+
+.priceTag {
+  @apply bg-yellow-200 font-mono font-bold border-2 border-black drop-shadow-[4px_4px_0_black];
+  border-radius: 2rem;
+  bottom: -2rem;
+  height: 4rem;
+  padding: 1rem;
+  position: absolute;
+  right: 4rem;
+  text-align: center;
+  transform: rotate(16deg);
+  width: 4rem;
+}
+
 /* button */
 
 .button {

@@ -5,17 +5,15 @@
 /* header */
 
 .header {
-  @apply md:h-1/2 h-screen;
+  @apply h-screen md:h-1/2;
   position: relative;
 }
 
 .header__image {
-  @apply md:h-full h-screen;
-  background-image: url(reimar-portrait.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  height: 100%;
   left: 0;
+  object-fit: cover;
+  position: absolute;
   top: 0;
   width: 100%;
 }
@@ -23,7 +21,7 @@
 /* sticker */
 
 .sticker {
-  @apply top-8 left-8 md:top-1/4 md:left-1/4 w-40 h-40;
+  @apply top-8 left-8 h-40 w-40 md:top-1/4 md:left-1/4;
   align-items: center;
   display: flex;
   filter: drop-shadow(4px 4px 0 black);
@@ -52,11 +50,7 @@
   transform: rotate(-12deg);
   width: 100%;
   z-index: 1;
-  filter:
-    drop-shadow(2px 0 0 black)
-    drop-shadow(-2px 0 0 black)
-    drop-shadow(0 -2px 0 black)
-    drop-shadow(0 2px 0 black);
+  filter: drop-shadow(2px 0 0 black) drop-shadow(-2px 0 0 black) drop-shadow(0 -2px 0 black) drop-shadow(0 2px 0 black);
 }
 
 #sticker-shape:first-child {
@@ -72,7 +66,7 @@
 /* arrow */
 
 .arrow {
-  @apply md:-bottom-8 bottom-1/4 -mb-12 right-1/4 w-40 h-40;
+  @apply bottom-1/4 right-1/4 -mb-12 h-40 w-40 md:-bottom-8;
   animation: move-vertically 4s ease-in-out infinite;
   filter: drop-shadow(8px 8px 0 black);
   position: absolute;
@@ -97,7 +91,7 @@
 }
 
 .header__title__char {
-  @apply text-4xl bg-black border-2 border-white text-white;
+  @apply border-2 border-white bg-black text-4xl text-white;
   animation: scale-and-rotate 8s linear infinite;
   border-radius: 2rem;
   height: 4rem;
@@ -142,7 +136,7 @@
 /* price tag */
 
 .priceTag {
-  @apply bg-yellow-200 font-mono font-bold border-2 border-black drop-shadow-[4px_4px_0_black];
+  @apply border-2 border-black bg-yellow-200 font-mono font-bold drop-shadow-[4px_4px_0_black];
   border-radius: 2rem;
   bottom: -2rem;
   height: 4rem;
@@ -157,7 +151,7 @@
 /* button */
 
 .button {
-  @apply rounded-md py-2 px-4 inline-block bg-white border-2 border-black hover:bg-yellow-200 drop-shadow-[4px_4px_0_black];
+  @apply inline-block rounded-md border-2 border-black bg-white py-2 px-4 drop-shadow-[4px_4px_0_black] hover:bg-yellow-200;
 }
 
 .button__icon {
@@ -177,23 +171,23 @@
   }
 }
 
-@keyframes spin-cw { 
-  100% { 
+@keyframes spin-cw {
+  100% {
     transform: rotate(360deg);
-  } 
+  }
 }
 
-@keyframes spin-ccw { 
-  100% { 
+@keyframes spin-ccw {
+  100% {
     transform: rotate(-360deg);
-  } 
+  }
 }
 
 @keyframes move-vertically {
   0% {
     transform: translate(0 0);
   }
-  50% { 
+  50% {
     transform: translate(0 16px);
   }
 }
@@ -202,7 +196,7 @@
   0% {
     transform: translate(0 0);
   }
-  50% { 
+  50% {
     transform: translate(8px 0);
   }
 }

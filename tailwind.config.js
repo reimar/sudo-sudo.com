@@ -3,8 +3,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'swiss': ['Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'],
-      }},
+        swiss: ["Helvetica Neue", "Helvetica", "Arial", "sans-serif"],
+      },
+    },
   },
   plugins: [],
-}
+};

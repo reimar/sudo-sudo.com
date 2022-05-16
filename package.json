@@ -23,8 +23,8 @@
   },
   "homepage": "https://github.com/reimar/sudo-sudo.com#readme",
   "devDependencies": {
-    "browser-sync": "^2.27.7",
-    "chokidar-cli": "^1.2.2",
+    "browser-sync": "^2.27.9",
+    "chokidar-cli": "^3.0.0",
     "nunjucks-cli": "^1.0.0",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.7",
